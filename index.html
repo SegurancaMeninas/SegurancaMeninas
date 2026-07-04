@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tendências e orientações de segurança digital para mulheres e meninas. Conheça as principais ameaças cibernéticas e aprenda a se proteger.">
+  <title>Guardiã Digital - Segurança Digital das Mulheres e Meninas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      <span>Guardiã Digital</span>
+    </div>
+    <div class="nav-controls">
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro/claro">
+        <!-- Moon Icon (Dark Mode Active -> Click to go Light) -->
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <!-- Sun Icon (Light Mode Active -> Click to go Dark) -->
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Filters & Search -->
+    <section class="control-bar">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Pesquisar tópicos ou termos...">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+
+      <div class="filters" id="filtersContainer">
+        <button class="filter-btn active" data-category="all">Todos</button>
+        <button class="filter-btn" data-category="harassment">Assédio & Violência</button>
+        <button class="filter-btn" data-category="ai">Inteligência Artificial</button>
+        <button class="filter-btn" data-category="privacy">Privacidade</button>
+        <button class="filter-btn" data-category="protection">Proteção & Prevenção</button>
+      </div>
+    </section>
+
+    <!-- Trending Topics Grid -->
+    <section class="trending-grid" id="trendingGrid">
+      <!-- Generated via app.js -->
+    </section>
+
+    <!-- Helpline Banner -->
+    <section class="helpline-bar">
+      <div class="helpline-info">
+        <h3>Violência digital é crime. Não se cale.</h3>
+        <p>Se você ou alguém que você conhece está passando por uma situação de assédio, extorsão, vazamento de fotos ou ameaças online, procure ajuda nos órgãos oficiais e especializados imediatamente.</p>
+      </div>
+      <div class="helpline-contacts">
+        <a href="tel:180" class="helpline-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Ligue 180
+        </a>
+        <a href="https://new.safernet.org.br/" target="_blank" rel="noopener noreferrer" class="helpline-btn helpline-btn-secondary">
+          Denunciar na SaferNet
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Slide-out Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Slide-out Drawer -->
+  <aside class="details-drawer" id="detailsDrawer" aria-hidden="true" role="dialog">
+    <div class="drawer-header">
+      <div class="topic-badge" id="drawerBadge">AI</div>
+      <button class="close-btn" id="closeDrawer" aria-label="Fechar detalhes">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="drawer-content">
+      <h2 id="drawerTitle">Título do Tópico</h2>
+      
+      <div class="drawer-stat-banner">
+        <h4>Estatística de Destaque</h4>
+        <p id="drawerStat">Carregando dado...</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          O que é?
+        </h3>
+        <p id="drawerDescription">Carregando descrição detalhada do problema cibernético...</p>
+      </div>
+
+      <div class="drawer-section">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Como se proteger?
+        </h3>
+        <ul class="tips-list" id="drawerTips">
+          <!-- Tips will load here -->
+        </ul>
+      </div>
+
+      <div class="drawer-section">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+          Recursos e Canais de Apoio
+        </h3>
+        <div class="resources-list" id="drawerResources">
+          <!-- Links will load here -->
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-about">
+        <div class="logo">
+          <svg width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          <span>Guardiã Digital</span>
+        </div>
+        <p>Um centro informativo de conscientização pública visando a segurança, integridade e dignidade digital de mulheres e adolescentes no ecossistema de internet brasileiro.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Prevenção</h4>
+          <a href="https://new.safernet.org.br/guias" target="_blank" rel="noopener noreferrer">Guias da SaferNet</a>
+          <a href="https://cartilha.cert.br/" target="_blank" rel="noopener noreferrer">Cartilhas CERT.br</a>
+        </div>
+        <div class="footer-column">
+          <h4>Denúncia</h4>
+          <a href="https://denuncia.safernet.org.br/" target="_blank" rel="noopener noreferrer">SaferNet Denúncias</a>
+          <a href="https://www.gov.br/mdh/pt-br/assuntos/disque-100" target="_blank" rel="noopener noreferrer">Disque 100</a>
+          <a href="https://www.gov.br/mulheres/pt-br" target="_blank" rel="noopener noreferrer">Ministério das Mulheres</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Guardiã Digital. Criado para conscientização e combate à violência digital de gênero.</span>
+      <span>Apoie esta causa. Divulgue informação segura.</span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
