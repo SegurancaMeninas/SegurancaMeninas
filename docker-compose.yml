@@ -1,0 +1,38 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: sqlite:////app/data/social_platform_transparency.db
+      FRONTEND_ORIGIN: http://localhost:3000
+      API_BASE_URL: http://localhost:8000
+    volumes:
+      - ./database:/app/data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health').read()\""]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  bootstrap:
+    image: curlimages/curl:8.10.1
+    depends_on:
+      backend:
+        condition: service_healthy
+    command:
+      - sh
+      - -lc
+      - curl -fsSL -X POST http://backend:8000/refresh
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    depends_on:
+      bootstrap:
+        condition: service_completed_successfully
+    ports:
+      - "3000:3000"

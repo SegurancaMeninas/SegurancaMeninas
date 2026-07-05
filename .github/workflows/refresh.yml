@@ -1,0 +1,15 @@
+name: Refresh Transparency Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh backend data
+        if: ${{ secrets.BACKEND_REFRESH_URL != '' }}
+        run: |
+          curl -fsSL -X POST "${{ secrets.BACKEND_REFRESH_URL }}"
