@@ -1,0 +1,22 @@
+{
+  "tipo_documento": "string",
+  "identificador": "string",
+  "fonte_normativa": "string",
+  "dispositivo_legal_afetado": "string",
+  "ambito_aplicacao": "array",
+  "plataforma_digital_envolvida": "string",
+  "natureza_violacao_ou_conformidade": "string",
+  "tema_juridico_principal": "string",
+  "sub_temas_juridicos": "array",
+  "principios_violados_ou_observados": "array",
+  "deveres_plataforma_afetados": "array",
+  "analise_adequacao": {
+    "score_conformidade": "number",
+    "status_geral": "string",
+    "itens_implementados": "array",
+    "itens_pendentes": "array",
+    "gap_analise": "string"
+  },
+  "consequencia_juridica": "string",
+  "referencia_externa": "string"
+}

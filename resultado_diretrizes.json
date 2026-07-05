@@ -1,0 +1,47 @@
+{
+  "tipo_documento": "Relatório de Conformidade",
+  "identificador": "Auditoria Discord",
+  "fonte_normativa": "Lei nº 15.211/2025 (ECA Digital)",
+  "dispositivo_legal_afetado": "Artigos 1-35",
+  "ambito_aplicacao": [
+    "Produtos e Serviços de TI",
+    "Proteção de Dados Pessoais",
+    "Verificação de Idade",
+    "Segurança de Conta"
+  ],
+  "plataforma_digital_envolvida": "Discord",
+  "natureza_violacao_ou_conformidade": "Conformidade Parcial",
+  "tema_juridico_principal": "Proteção de Crianças e Adolescentes",
+  "sub_temas_juridicos": [
+    "Verificação de Idade",
+    "Privacidade",
+    "Segurança de Conta",
+    "Proteção de Dados Pessoais"
+  ],
+  "principios_violados_ou_observados": [
+    "Princípio do Melhor Interesse",
+    "Princípio da Privacidade",
+    "Princípio da Segurança"
+  ],
+  "deveres_plataforma_afetados": [
+    "Dever de Proteger Dados Pessoais",
+    "Dever de Realizar Verificação de Idade",
+    "Dever de Oferecer Configurações de Segurança"
+  ],
+  "analise_adequacao": {
+    "score_conformidade": 80,
+    "status_geral": "Em Conformidade Parcial",
+    "itens_implementados": [
+      "Verificação de Idade",
+      "Configurações de Segurança Padrão",
+      "Filtros de Conteúdo Sensível"
+    ],
+    "itens_pendentes": [
+      "Expansão da Verificação de Idade para Outras Regiões",
+      "Melhoria na Transparência sobre Uso de Dados Pessoais"
+    ],
+    "gap_analise": "Falta de Expansão da Verificação de Idade e Melhoria na Transparência"
+  },
+  "consequencia_juridica": "Multas e Sanções em Caso de Não Conformidade",
+  "referencia_externa": "Lei nº 15.211/2025 e Regulamentações Conexas"
+}
