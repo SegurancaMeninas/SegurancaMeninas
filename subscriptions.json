@@ -1,0 +1,15 @@
+{
+  "authenticated_channel": null,
+  "total_subscriptions_returned": 1,
+  "subscriptions": [
+    {
+      "subscription_id": "jitnnPFuVI6IQDHIwa33YiSJMPQQoc2SRIS9RSNY5f4",
+      "channel_id": "UCZiYbVptd3PVPf4f6eR6UaQ",
+      "title": "CazéTV",
+      "description": "",
+      "subscribed_at": "2026-07-06T21:48:41.303124Z",
+      "thumbnail_url": "https://yt3.ggpht.com/R-NJzpNfFCOxdwRZGFsCzCDK4pLDpfU0MN77CYXf8S9UP4YDbA4YgE_1WIshV2zz54A-Bns=s800-c-k-c0x00ffffff-no-rj",
+      "channel_url": "https://www.youtube.com/channel/UCZiYbVptd3PVPf4f6eR6UaQ"
+    }
+  ]
+}

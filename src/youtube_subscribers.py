@@ -21,8 +21,8 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtube.readonly"
 ]
 
-# Pasta onde está salvo este arquivo Python.
-BASE_DIR = Path(__file__).resolve().parent
+# Pasta raiz do projeto (onde ficam client_secret.json, .env e token.json).
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def load_env_file(env_path: Path) -> None:
@@ -86,7 +86,7 @@ def get_path_from_env_or_argument(
 
     # Se o caminho for relativo, ele será buscado na pasta do script.
     if not path.is_absolute():
-        path = BASE_DIR / path
+        path = PROJECT_ROOT / path
 
     return path.resolve()
 
@@ -140,18 +140,19 @@ def create_authenticated_youtube_service(
         except RefreshError:
             credentials = None
 
-    # Sem token válido: abre navegador para o usuário fazer login.
+    # Sem token válido: usa um fluxo compatível com terminal.
     if not credentials or not credentials.valid:
         flow = InstalledAppFlow.from_client_secrets_file(
             str(client_secret_path),
             SCOPES,
         )
 
-        credentials = flow.run_local_server(
-            host="localhost",
-            port=0,
-            open_browser=True,
+        print(
+            "Abra o link abaixo no navegador, autorize o aplicativo e cole o "
+            "código de autorização no terminal.",
+            file=sys.stderr,
         )
+        credentials = flow.run_console()
 
         # Cria pasta do token, se necessário.
         token_path.parent.mkdir(parents=True, exist_ok=True)
@@ -318,13 +319,40 @@ def list_user_subscriptions(
             return subscriptions
 
 
+def print_subscriptions(
+    authenticated_channel: dict[str, Any] | None,
+    subscriptions: list[dict[str, Any]],
+) -> None:
+    """Exibe as inscrições de forma legível no terminal."""
+
+    print("\n=== Inscrições do canal autenticado ===")
+
+    if authenticated_channel:
+        print(
+            f"Conta autenticada: {authenticated_channel.get('title')}"
+            f" ({authenticated_channel.get('channel_id')})"
+        )
+    else:
+        print("Conta autenticada: não foi possível identificar o canal.")
+
+    if not subscriptions:
+        print("Nenhuma inscrição encontrada.")
+        return
+
+    print(f"Total de inscrições encontradas: {len(subscriptions)}")
+    for index, subscription in enumerate(subscriptions, start=1):
+        title = subscription.get("title") or "Sem título"
+        channel_id = subscription.get("channel_id") or "-"
+        print(f"{index}. {title} ({channel_id})")
+
+
 def parse_args() -> argparse.Namespace:
     """
     Lê argumentos informados no terminal.
     """
 
     # Carrega .env antes de ler argumentos.
-    load_env_file(BASE_DIR / ".env")
+    load_env_file(PROJECT_ROOT / ".env")
 
     parser = argparse.ArgumentParser(
         description=(
@@ -454,8 +482,10 @@ def main() -> int:
             encoding="utf-8",
         )
 
+        print_subscriptions(authenticated_channel, subscriptions)
+
         print(
-            f"Concluído: {len(subscriptions)} inscrições foram salvas em:\n"
+            f"\nConcluído: {len(subscriptions)} inscrições foram salvas em:\n"
             f"{output_path}"
         )
 
