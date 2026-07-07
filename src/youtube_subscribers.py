@@ -14,6 +14,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import Resource, build
 from googleapiclient.errors import HttpError
 
+from classify_channels import run_classification_for_payload
+
 
 # Permissão mínima necessária:
 # permite ler dados do YouTube da conta autenticada.
@@ -498,6 +500,13 @@ def main() -> int:
         print(
             f"\nConcluído: {len(clean_payload)} inscrições foram salvas em:\n"
             f"{output_path}"
+        )
+
+        classification_output_path = PROJECT_ROOT / "data" / "channel_classifications.json"
+        run_classification_for_payload(
+            clean_payload,
+            output_path=classification_output_path,
+            service=service,
         )
 
         return 0

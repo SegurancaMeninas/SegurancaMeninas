@@ -1,0 +1,143 @@
+{
+  "policy_version": "eca_digital_lei_15211_2025",
+  "classification_scope": "adequacao_de_canais_do_youtube_para_criancas_e_adolescentes",
+  "criteria_to_avoid": [
+    {
+      "id": "sexual_exploitation_or_abuse",
+      "label": "Exploração ou abuso sexual",
+      "severity": "CRITICAL",
+      "must_avoid": true,
+      "detect": [
+        "exploração sexual de crianças ou adolescentes",
+        "aliciamento ou tentativa de contato sexual com menores",
+        "sexualização de menores",
+        "conteúdo sugestivo envolvendo crianças ou adolescentes"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW_CRITICAL",
+      "channel_status": "NOT_SUITABLE_FOR_MINORS"
+    },
+    {
+      "id": "physical_violence",
+      "label": "Violência física",
+      "severity": "HIGH",
+      "must_avoid": true,
+      "detect": [
+        "agressões reais",
+        "tortura",
+        "ameaças físicas",
+        "violência gráfica",
+        "incentivo ou glorificação de agressões"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW",
+      "channel_status": "NOT_SUITABLE_FOR_CHILDREN"
+    },
+    {
+      "id": "cyberbullying_harassment",
+      "label": "Bullying, intimidação virtual e assédio",
+      "severity": "HIGH",
+      "must_avoid": true,
+      "detect": [
+        "humilhação recorrente",
+        "perseguição ou ataques direcionados",
+        "ameaças",
+        "assédio psicológico",
+        "incentivo para atacar, ridicularizar ou excluir pessoas"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW",
+      "channel_status": "RESTRICTED_OR_NOT_SUITABLE"
+    },
+    {
+      "id": "harmful_behavior_inducement",
+      "label": "Indução a comportamentos prejudiciais",
+      "severity": "CRITICAL",
+      "must_avoid": true,
+      "detect": [
+        "desafios perigosos",
+        "instruções que possam causar dano físico ou psicológico",
+        "incentivo à violência contra outras pessoas",
+        "incentivo a automedicação ou autodiagnóstico",
+        "incentivo a práticas de risco"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW_CRITICAL",
+      "channel_status": "NOT_SUITABLE_FOR_MINORS"
+    },
+    {
+      "id": "self_harm_suicide",
+      "label": "Automutilação e suicídio",
+      "severity": "CRITICAL",
+      "must_avoid": true,
+      "detect": [
+        "incentivo à automutilação",
+        "incentivo ou instruções sobre suicídio",
+        "romantização de autolesão",
+        "conteúdo que estimule dano à própria saúde"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW_CRITICAL",
+      "channel_status": "NOT_SUITABLE_FOR_MINORS"
+    },
+    {
+      "id": "addictive_substances",
+      "label": "Drogas, tabaco, álcool e substâncias viciantes",
+      "severity": "HIGH",
+      "must_avoid": true,
+      "detect": [
+        "promoção de drogas",
+        "incentivo ao consumo de álcool ou tabaco",
+        "instruções de uso de substâncias",
+        "normalização ou glorificação do consumo para crianças"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW",
+      "channel_status": "NOT_SUITABLE_FOR_CHILDREN"
+    },
+    {
+      "id": "gambling_betting",
+      "label": "Jogos de azar e apostas",
+      "severity": "HIGH",
+      "must_avoid": true,
+      "detect": [
+        "divulgação de casas de apostas",
+        "links ou cupons de betting",
+        "incentivo a apostas",
+        "loterias, rifas ou jogos de azar direcionados a menores"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW",
+      "channel_status": "NOT_SUITABLE_FOR_CHILDREN"
+    },
+    {
+      "id": "predatory_advertising",
+      "label": "Publicidade predatória, injusta ou enganosa",
+      "severity": "HIGH",
+      "must_avoid": true,
+      "detect": [
+        "pressão de compra direcionada a crianças",
+        "publicidade disfarçada de conteúdo infantil",
+        "golpes ou promessas enganosas",
+        "manipulação emocional para consumo",
+        "incentivo a gastos sem transparência"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW",
+      "channel_status": "RESTRICTED_OR_NOT_SUITABLE"
+    },
+    {
+      "id": "pornographic_content",
+      "label": "Conteúdo pornográfico",
+      "severity": "CRITICAL",
+      "must_avoid": true,
+      "detect": [
+        "pornografia",
+        "nudez sexual explícita",
+        "atos sexuais explícitos",
+        "material sexual adulto"
+      ],
+      "decision_if_detected": "HUMAN_REVIEW_CRITICAL",
+      "channel_status": "NOT_SUITABLE_FOR_MINORS"
+    }
+  ],
+  "safety_rules": {
+    "do_not_make_criminal_claims": true,
+    "use_evidence_with_timestamp": true,
+    "critical_cases_require_human_review": true,
+    "separate_channel_suitability_from_platform_violation": true,
+    "allow_insufficient_evidence_status": true
+  }
+}
