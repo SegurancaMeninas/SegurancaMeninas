@@ -319,6 +319,20 @@ def list_user_subscriptions(
             return subscriptions
 
 
+def build_clean_subscription_payload(
+    subscriptions: list[dict[str, Any]],
+) -> list[dict[str, str]]:
+    """Cria uma saída simples com nome e channel_id para exportação."""
+
+    return [
+        {
+            "name": subscription.get("title") or "",
+            "channel_id": subscription.get("channel_id") or "",
+        }
+        for subscription in subscriptions
+    ]
+
+
 def print_subscriptions(
     authenticated_channel: dict[str, Any] | None,
     subscriptions: list[dict[str, Any]],
@@ -382,6 +396,7 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Arquivo JSON de saída. "
             "Alternativa: YOUTUBE_SUBSCRIPTIONS_OUTPUT no .env."
+            " Padrão: data/subscriptions.json."
         ),
     )
 
@@ -441,7 +456,7 @@ def main() -> int:
     output_path = get_path_from_env_or_argument(
         argument_value=args.output,
         env_name="YOUTUBE_SUBSCRIPTIONS_OUTPUT",
-        default_filename="subscriptions.json",
+        default_filename="data/subscriptions.json",
     )
 
     try:
@@ -461,12 +476,8 @@ def main() -> int:
             limit=args.limit,
         )
 
-        # Estrutura final salva no JSON.
-        result = {
-            "authenticated_channel": authenticated_channel,
-            "total_subscriptions_returned": len(subscriptions),
-            "subscriptions": subscriptions,
-        }
+        # Estrutura final salva em um JSON limpo com nome e channel_id.
+        clean_payload = build_clean_subscription_payload(subscriptions)
 
         output_path.parent.mkdir(
             parents=True,
@@ -475,7 +486,7 @@ def main() -> int:
 
         output_path.write_text(
             json.dumps(
-                result,
+                clean_payload,
                 ensure_ascii=False,
                 indent=2,
             ),
@@ -485,7 +496,7 @@ def main() -> int:
         print_subscriptions(authenticated_channel, subscriptions)
 
         print(
-            f"\nConcluído: {len(subscriptions)} inscrições foram salvas em:\n"
+            f"\nConcluído: {len(clean_payload)} inscrições foram salvas em:\n"
             f"{output_path}"
         )
 
