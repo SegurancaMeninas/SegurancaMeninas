@@ -1,7 +1,7 @@
 {
   "policy_version": "eca_digital_lei_15211_2025",
   "classification_scope": "adequacao_de_canais_do_youtube_para_criancas_e_adolescentes",
-  "generated_at": "2026-07-07T19:58:49.637195+00:00",
+  "generated_at": "2026-07-08T02:36:35.206224+00:00",
   "analysis_method": {
     "name": "youtube_content_evidence_with_timestamped_transcripts",
     "channel_name_used_as_evidence": false,
@@ -10,122 +10,8 @@
   },
   "results": [
     {
-      "channel_id": "UCk-SrXfOZAtnFXC-NGsQCmg",
-      "channel_name": "Canal Creepy",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 1,
-        "transcripts_available": 1,
-        "timestamped_transcript_chunks": 8
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
       "channel_id": "UCZiYbVptd3PVPf4f6eR6UaQ",
       "channel_name": "CazéTV",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 6,
-        "transcripts_available": 3,
-        "timestamped_transcript_chunks": 21
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
-      "channel_id": "UCg3kaRqlBlRkgBbMpiRg3og",
-      "channel_name": "Creepy Brasil",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 6,
-        "transcripts_available": 3,
-        "timestamped_transcript_chunks": 24
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
-      "channel_id": "UCNS8QijmVzXxgWndUb0h1Cw",
-      "channel_name": "CreepyVids",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 6,
-        "transcripts_available": 3,
-        "timestamped_transcript_chunks": 24
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
-      "channel_id": "UCdVldBgeMFs6bPaRKLPRJ2g",
-      "channel_name": "Especialista em TI",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 6,
-        "transcripts_available": 3,
-        "timestamped_transcript_chunks": 24
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
-      "channel_id": "UCfDXd1fkOWZa7806Y1M_vww",
-      "channel_name": "Gabriel  Caetano",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 6,
-        "transcripts_available": 3,
-        "timestamped_transcript_chunks": 24
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
-      "channel_id": "UCweUDTc7fU8hKvIwE55VpvQ",
-      "channel_name": "Hora da Creepy",
       "is_within_ueca_guidelines": null,
       "channel_status": "INSUFFICIENT_EVIDENCE",
       "decision": "INSUFFICIENT_EVIDENCE",
@@ -162,27 +48,8 @@
       "classification_engine": "not_completed"
     },
     {
-      "channel_id": "UCPrVb6c4HlZw5hN3sw_nAfQ",
-      "channel_name": "João Caetano Novo",
-      "is_within_ueca_guidelines": null,
-      "channel_status": "INSUFFICIENT_EVIDENCE",
-      "decision": "INSUFFICIENT_EVIDENCE",
-      "needs_human_review": false,
-      "primary_category": null,
-      "categories_detected": [],
-      "analysis_summary": "Não foi possível concluir a adequação do canal com as evidências coletadas. Motivo técnico/operacional: Falha ao consultar a OpenAI com o modelo 'gpt-4.1-mini': Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}",
-      "evidence": [],
-      "coverage": {
-        "recent_videos_found": 6,
-        "transcripts_available": 0,
-        "timestamped_transcript_chunks": 0
-      },
-      "collection_errors": [],
-      "classification_engine": "not_completed"
-    },
-    {
-      "channel_id": "UCAB7lGTjzKemcBqvag3Cskg",
-      "channel_name": "Marlon Chaves #MCR",
+      "channel_id": "UCbTVTephX30ZhQF5zwFppBg",
+      "channel_name": "rezendeevil",
       "is_within_ueca_guidelines": null,
       "channel_status": "INSUFFICIENT_EVIDENCE",
       "decision": "INSUFFICIENT_EVIDENCE",
